@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mercado de Flores de Acho – Catálogo digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <h1 class="marca">🌸 Mercado de Flores de Acho</h1>
+      <button class="btn-carrito" id="btn-carrito" type="button" aria-label="Ir al carrito">
+        🛒 Carrito <span class="contador" id="contador">0</span>
+      </button>
+    </div>
+    <div class="contenedor filtros">
+      <input type="search" id="buscador" placeholder="Buscar flores o puestos…" aria-label="Buscar productos">
+      <select id="filtro-tipo" aria-label="Filtrar por tipo de flor">
+        <option value="todos">Todos los tipos</option>
+        <option value="Rosas">Rosas</option>
+        <option value="Girasoles">Girasoles</option>
+        <option value="Orquídeas">Orquídeas</option>
+        <option value="Lirios">Lirios</option>
+        <option value="Claveles">Claveles</option>
+        <option value="Tulipanes">Tulipanes</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <p id="sin-resultados" class="aviso" hidden>No se encontraron productos.</p>
+    <section id="grilla" class="grilla" aria-label="Productos"></section>
+
+    <section class="panel" id="carrito" aria-label="Carrito y entrega">
+      <h2>Tu carrito</h2>
+      <ul id="lista-carrito" class="lista-carrito"></ul>
+      <p id="carrito-vacio" class="aviso">Tu carrito está vacío.</p>
+
+      <h2>Elegir entrega</h2>
+      <div class="entrega">
+        <label><input type="radio" name="entrega" value="delivery" checked> Delivery</label>
+        <label><input type="radio" name="entrega" value="recojo"> Recojo en tienda</label>
+      </div>
+      <div class="campo" id="campo-distrito">
+        <label for="distrito">Distrito</label>
+        <select id="distrito">
+          <option value="Rímac">Rímac – S/ 5.00</option>
+          <option value="Miraflores">Miraflores – S/ 10.00</option>
+          <option value="Surco">Surco – S/ 12.00</option>
+          <option value="Otros">Otros distritos – S/ 15.00</option>
+        </select>
+      </div>
+
+      <dl class="resumen">
+        <div><dt>Subtotal</dt><dd id="subtotal">S/ 0.00</dd></div>
+        <div><dt>Envío</dt><dd id="envio">S/ 0.00</dd></div>
+        <div class="resumen__total"><dt>Total</dt><dd id="total">S/ 0.00</dd></div>
+      </dl>
+      <div class="acciones">
+        <button type="button" class="btn" id="btn-finalizar">Finalizar pedido (simulado)</button>
+        <button type="button" class="btn btn--sec" id="btn-vaciar">Vaciar carrito</button>
+      </div>
+      <p id="mensaje" class="aviso" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="pie">Maqueta demostrativa – sin conexión a servidor.</footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
