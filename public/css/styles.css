@@ -1,0 +1,115 @@
+:root {
+  --rosa: #d6336c;
+  --rosa-claro: #fde8ef;
+  --verde: #2f7d4f;
+  --verde-claro: #e6f4ea;
+  --texto: #2b2b2b;
+  --gris: #6b6b6b;
+  --borde: #f0d5de;
+  --radio: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: #fffafc;
+  line-height: 1.5;
+}
+
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.encabezado {
+  background: linear-gradient(135deg, var(--rosa), #e8749a);
+  color: #fff;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+.encabezado__fila { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.marca { margin: 0; font-size: 1.4rem; }
+
+.btn-carrito {
+  background: #fff; color: var(--rosa); border: 0; border-radius: 999px;
+  padding: 8px 16px; font-weight: 600; cursor: pointer;
+}
+.contador {
+  display: inline-block; min-width: 22px; padding: 0 6px; margin-left: 4px;
+  background: var(--verde); color: #fff; border-radius: 999px; text-align: center; font-size: .85rem;
+}
+
+.filtros { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.filtros input, .filtros select, .campo select {
+  padding: 10px 12px; border-radius: 10px; border: 1px solid var(--borde); font-size: 1rem; background: #fff;
+}
+.filtros input { flex: 1 1 220px; }
+.filtros select { flex: 0 1 200px; }
+
+main { padding-top: 24px; padding-bottom: 32px; }
+
+.grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+
+.tarjeta {
+  background: #fff; border: 1px solid var(--borde); border-radius: var(--radio);
+  padding: 16px; display: flex; flex-direction: column; gap: 6px;
+  transition: transform .15s, box-shadow .15s;
+}
+.tarjeta:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(214, 51, 108, .15); }
+.tarjeta__emoji { font-size: 3rem; text-align: center; background: var(--rosa-claro); border-radius: 10px; padding: 10px 0; }
+.tarjeta h3 { margin: 6px 0 0; font-size: 1.1rem; }
+.tarjeta__tipo { align-self: flex-start; background: var(--verde-claro); color: var(--verde); font-size: .75rem; padding: 2px 10px; border-radius: 999px; }
+.tarjeta__puesto { color: var(--gris); font-size: .9rem; margin: 0; }
+.tarjeta__precio { font-weight: 700; font-size: 1.2rem; color: var(--rosa); margin: 4px 0; }
+
+.btn {
+  background: var(--verde); color: #fff; border: 0; border-radius: 10px;
+  padding: 10px 14px; font-size: 1rem; cursor: pointer; font-weight: 600;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn--sec { background: #fff; color: var(--rosa); border: 1px solid var(--rosa); }
+.tarjeta .btn { margin-top: auto; }
+
+.panel {
+  margin-top: 36px; background: #fff; border: 1px solid var(--borde);
+  border-radius: var(--radio); padding: 20px;
+}
+.panel h2 { margin-top: 0; color: var(--rosa); }
+.panel h2:not(:first-child) { margin-top: 24px; }
+
+.lista-carrito { list-style: none; padding: 0; margin: 0; }
+.lista-carrito li {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 8px 0; border-bottom: 1px dashed var(--borde); flex-wrap: wrap;
+}
+.cantidad { display: inline-flex; align-items: center; gap: 8px; }
+.cantidad button {
+  width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--rosa);
+  background: #fff; color: var(--rosa); cursor: pointer; font-size: 1rem;
+}
+
+.entrega { display: flex; gap: 20px; flex-wrap: wrap; }
+.campo { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; max-width: 280px; }
+
+.resumen { margin: 20px 0; }
+.resumen div { display: flex; justify-content: space-between; padding: 4px 0; }
+.resumen dt, .resumen dd { margin: 0; }
+.resumen__total { font-weight: 700; font-size: 1.2rem; border-top: 2px solid var(--borde); margin-top: 6px; padding-top: 8px !important; color: var(--verde); }
+
+.acciones { display: flex; gap: 10px; flex-wrap: wrap; }
+.aviso { color: var(--gris); }
+#mensaje { color: var(--verde); font-weight: 600; }
+
+.pie { text-align: center; padding: 20px 16px; background: var(--verde-claro); color: var(--verde); font-size: .9rem; }
+
+@media (max-width: 520px) {
+  .marca { font-size: 1.15rem; }
+  .grilla { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tarjeta { padding: 12px; }
+}
+@media (max-width: 380px) {
+  .grilla { grid-template-columns: 1fr; }
+}
